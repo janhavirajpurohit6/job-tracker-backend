@@ -3,10 +3,12 @@ const cors = require('cors');
 require('dotenv').config();
 const db = require('./db');
 const authRoutes = require('./routes/auth');
+const applicationRoutes = require('./routes/applications');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use('/api/applications', applicationRoutes);
 
 // test route to confirm DB connection works
 app.use('/api/auth', authRoutes);
