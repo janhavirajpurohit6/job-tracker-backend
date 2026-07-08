@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard - Job Tracker</title>
+<link rel="stylesheet" href="dashboard-style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <h1>Job Tracker</h1>
+  <div>
+    <span id="userName"></span>
+    <button id="logoutBtn">Logout</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- STATS -->
+  <div class="stats" id="stats"></div>
+
+  <!-- ADD APPLICATION FORM -->
+  <div class="card">
+    <h2>Add Application</h2>
+    <form id="addForm">
+      <input type="text" id="companyName" placeholder="Company Name" required>
+      <input type="text" id="role" placeholder="Role" required>
+      <select id="status">
+        <option value="applied">Applied</option>
+        <option value="oa">OA</option>
+        <option value="interview">Interview</option>
+        <option value="offer">Offer</option>
+        <option value="rejected">Rejected</option>
+      </select>
+      <input type="date" id="appliedDate">
+      <input type="text" id="notes" placeholder="Notes (optional)">
+      <button type="submit">Add</button>
+    </form>
+  </div>
+
+  <!-- FILTER -->
+  <div class="filter-bar">
+    <label>Filter by status:</label>
+    <select id="filterStatus">
+      <option value="all">All</option>
+      <option value="applied">Applied</option>
+      <option value="oa">OA</option>
+      <option value="interview">Interview</option>
+      <option value="offer">Offer</option>
+      <option value="rejected">Rejected</option>
+    </select>
+  </div>
+
+  <!-- APPLICATIONS TABLE -->
+  <table id="applicationsTable">
+    <thead>
+      <tr>
+        <th>Company</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>Applied Date</th>
+        <th>Notes</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="applicationsBody"></tbody>
