@@ -8,6 +8,7 @@ const applicationRoutes = require('./routes/applications');
 const app = express();
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
 app.use('/api/applications', applicationRoutes);
 
 // test route to confirm DB connection works
