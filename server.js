@@ -2,12 +2,14 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 const db = require('./db');
+const authRoutes = require('./routes/auth');
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
 // test route to confirm DB connection works
+app.use('/api/auth', authRoutes);
 app.get('/api/test', async (req, res) => {
   try {
     const [rows] = await db.query('SELECT 1 + 1 AS result');
